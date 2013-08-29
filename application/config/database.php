@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '644W9Ud*';
+$db['default']['username'] = 'lexicons';
+$db['default']['password'] = 'lexmanager';
 $db['default']['database'] = 'lexicons';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

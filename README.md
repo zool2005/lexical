@@ -1,5 +1,5 @@
-Codeigniter port of LexManager, a free and open-source dictionary management tool, created by Martin Posthumus
-Original code accessible on GITHUB : https://github.com/voikya/LexManager (details below)
+Codeigniter port of LexManager, a free and open-source dictionary management tool, created by Martin Posthumus.
+Original code accessible on GITHUB : https://github.com/voikya/LexManager (details below). Project website : http://www.veche.net/programming/lexmanager.html.
 
 +-----------------------------------------------------------------------------------------------+
 | LexManager, Copyright ©2011 Martin Posthumus                                                  |
@@ -13,3 +13,5 @@ Original code accessible on GITHUB : https://github.com/voikya/LexManager (detai
 | LexManager is distributed in the hope that it or some part of it will be useful, but comes    |
 | with no warranty for loss of data, as per the GPL3 license.                                   |
 +-----------------------------------------------------------------------------------------------+
+
+

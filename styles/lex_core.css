@@ -42,6 +42,13 @@ body {
 	float: left;
 }
 
+#topbar a
+{
+	color: white;
+	text-decoration: none;
+	border-bottom: 1px dotted white;
+}
+
 #topbar table {
 	position: absolute;
 	top: 45px;
@@ -120,7 +127,7 @@ body {
 
 #adminnav {
 	float: right;
-	margin-top: -10px;
+	margin-top: 5px;
 	padding: 0px 20px 0px 0px;
 }
 
@@ -278,6 +285,7 @@ label {
 	display: block;
 	width: 140px;
 	float: left;
+	clear: left;
 	margin: 4px;
 }
 
@@ -311,6 +319,7 @@ table.lex_newentry th {
 table.lex_viewall {
 	border: solid 1px black;
 	border-collapse: collapse;
+	margin-top: 25px;
 }
 
 table.lex_viewall td {
@@ -373,6 +382,8 @@ div.onefield_break_hover {
 input[type=text], input[type=password], textarea {
 	border: solid 1px black;
 	margin: 4px;
+	display: block;
+	padding: 4px;
 }
 
 input[type=button], input[type=submit] {
@@ -391,4 +402,32 @@ input.next {
 fieldset {
 	padding: 10px;
 	border: solid 1px black;
+}
+
+/* Generic Definitions Styling */
+.Word{
+font-family: serif;
+font-size: medium;
+color: #000000;
+font-weight: normal;
+font-style: normal;
+text-decoration: none;
+font-variant: normal;
+}
+
+.Definition{
+font-family: serif;
+font-size: medium;
+color: #000000;
+list-style-type: Decimal (1., 2., 3.);
+}
+
+.Examples{
+font-family: serif;
+font-size: medium;
+color: #000000;
+font-weight: bold;
+font-style: normal;
+text-decoration: none;
+font-variant: normal;
 }

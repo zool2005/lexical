@@ -130,7 +130,8 @@ class Ajax extends CI_Controller {
 			
 				foreach($sorted_result_array as $entry) 
 				{
-					echo("<p><a href=\"view.php?i=" . $lex_ID . "&e=" . $entry['Index_ID'] . "\" class=\"entrylink\">" . $entry['Word'] . "</p>\n");
+					echo "<p>".anchor('lexmanager/view_word/'.$lex_ID.'/'.$entry['Index_ID'].'/', $entry['Word'], 'class="entrylink"')."</p>";
+		//			echo("<p><a href=\"view.php?i=" . $lex_ID . "&e=" . $entry['Index_ID'] . "\" class=\"entrylink\">" . $entry['Word'] . "</p>\n");
 				}
 			}
 
@@ -178,7 +179,8 @@ class Ajax extends CI_Controller {
 
 				foreach($sorted_result_array as $entry) 
 				{
-					echo("<p><a href=\"view.php?i=" . $lex_ID . "&e=" . $entry['Index_ID'] . "\" class=\"entrylink\">" . $entry['Word'] . "</p>\n");
+//					echo("<p><a href=\"view.php?i=" . $lex_ID . "&e=" . $entry['Index_ID'] . "\" class=\"entrylink\">" . $entry['Word'] . "</p>\n");
+					echo "<p>".anchor('lexmanager/view_word/'.$lex_ID.'/'.$entry['Index_ID'].'/', $entry['Word'], 'class="entrylink"')."</p>";
 				}
 			}
 		}

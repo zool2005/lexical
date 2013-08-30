@@ -37,9 +37,7 @@ function adjustSearch() {
 
 
 function alphaQueries() {	
-
-/*
-	// modified to use URI strings instead
+	// modified to use URI strings instead, updated for CI
 	$('.alpha')
 		.on('click', function() {
 			var letter = $(this).text();
@@ -50,19 +48,6 @@ function alphaQueries() {
 				.scrollTop(0);
 			return false;
 		});
-*/
-
-	$('.alpha')
-		.bind('click', function() {
-			var letter = $(this).text();
-			var lex = $(this).attr('href');
-			var datasource = 'query.php?i=' + lex + '&a=' + letter;
-			$('#leftbar')
-				.load(datasource)
-				.scrollTop(0);
-			return false;
-		});
-
 
 }
 
@@ -70,20 +55,24 @@ function alphaQueries() {
 
 
 function wordLookup() {
+	// updated for CI
 	$('a.entrylink')
 		.not('.external')
 		.unbind()
-		.bind('click', function() {
+		.bind('click', function(event) {
+			event.preventDefault();
 			var datasource = $(this).attr('href');
+			console.log(datasource);
 			$('#entryview').load(datasource);
 			return false;
 		});
 	$('a.searchedentrylink')
 		.unbind()
-		.bind('click', function() {
+		.bind('click', function(event) {
+			event.preventDefault();
 			var index = $(this).attr('id');
 			var query = $('#query').text();
-			var datasource = 'view.php?i=' + index + '&s=' + query;
+			var datasource = base_url+ 'index.php/lexmanager/view_word/'+index+'/'+query;
 			$('#entryview').load(datasource);
 			return false;
 		});

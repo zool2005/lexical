@@ -28,7 +28,7 @@ $this->load->view('headset');
 <div id="content">
 
    	<div id="topbar">
-   		<?php echo heading($headline, 1); ?>
+   		<?php echo heading($headline, 1).' '.anchor('login/logout', 'Logout'); ?>
 		<?php $this->load->view($topbar); ?>
     </div>
 

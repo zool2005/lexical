@@ -20,6 +20,8 @@ $lang['title_login'] = 'LexManager Login';
 $lang['headline_login'] = 'LexManager Login';
 $lang['title_view_all'] = 'View All Lexicons';
 $lang['headline_view_all'] = 'View All Lexicons';
+$lang['title_lex_admin'] = 'Lexical Administration';
+$lang['headline_lex_admin'] = 'Lexical Administration';
 
 
 

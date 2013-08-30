@@ -181,6 +181,7 @@ function attachSubmitControlsForEditEntry() {
 
 // On adm_lex_viewall.php, attach an AJAX call to each 'View' link to display a single record
 function attachViewLinks() {
+	// updated for CI
 	$('a.viewlink')
 		.bind('click', function() {
 			var datasource = $(this).attr('href');
@@ -191,12 +192,13 @@ function attachViewLinks() {
 
 // On adm_lex_viewall.php, attach a redirect to the "Go" button to reload the page with new display settings
 function attachShowEntriesButtonControls() {
+	// updated for CI
 	$('#showEntries')
 		.bind('click', function() {
 			var lexIndex = $('#lexIndex').attr('value');
 			var maxEntriesDisplayed = $('#maxEntriesDisplayed').attr('value');
 			var startFrom = $('#startFrom').attr('value');
-			window.location = 'adm_lex_viewall.php?i=' + lexIndex + '&start=' + startFrom + '&num=' + maxEntriesDisplayed;
+			window.location = baseurl+'index.php/lex_admin/adm_lex_viewall/'+lexIndex+'/'+startFrom+'/'+maxEntriesDisplayed;
 		});
 }
 

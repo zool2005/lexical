@@ -38,6 +38,31 @@ $(document).ready(function(){
 				.scrollTop(0);
 			return false;
 		});
+
+
+	$('a.entrylink')
+		.not('.external')
+		.unbind()
+		.bind('click', function() {
+			var datasource = $(this).attr('href');
+			$('#entryview').load(datasource);
+			return false;
+		});
+		
+	$('a.searchedentrylink')
+		.unbind()
+		.bind('click', function() {
+			var index = $(this).attr('id');
+			var query = $('#query').text();
+			var datasource = base_url+ 'index.php/lexmanager/view_word/'+index+'/'+query+'/';
+//			var datasource = 'view.php?i=' + index + '&s=' + query;
+			$('#entryview').load(datasource);
+			return false;
+		});
+
 });
+
+
+
 
 </script>

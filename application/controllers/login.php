@@ -32,7 +32,7 @@ class Login extends CI_Controller {
 	{
 		if ($this->session->userdata('status') == 1)
 		{	// 1 = ADMINISTRATOR
-			redirect('adm_lexmanager/index', 'refresh');
+			redirect('lex_admin/index', 'refresh');
 		}
 		elseif ($this->session->userdata('status') == 2)
 		{	// 2 = NORMAL USER
@@ -70,7 +70,7 @@ class Login extends CI_Controller {
 		{
 			if ($this->session->userdata('status') == 1)
 			{	// 1 = ADMINISTRATOR
-				redirect('adm_lexmanager/index', 'refresh');
+				redirect('lex_admin/index', 'refresh');
 			}
 			elseif ($this->session->userdata('status') == 2)
 			{	// 2 = NORMAL USER

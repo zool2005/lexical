@@ -1,4 +1,4 @@
-<?php
+<?php if(!defined('BASEPATH')) exit('No direct access is allowed');
 /*
 +-----------------------------------------------------------------------------------------------+
 | Lexical, a web-based dictionary management ported to the CodeIgniter framework from 			|
@@ -13,28 +13,23 @@
 | Lexical comes with no warranty for loss of data, as per the GPL3 license.    					|
 +-----------------------------------------------------------------------------------------------+
 */
-$lang['login'] = 'Login';
+class Mdl_lexicon_entries extends CI_Model {
+
+	function __construct()
+    {
+        parent::__construct();
+	}
 
 
-$lang['title_login'] = 'LexManager Login';
-$lang['headline_login'] = 'LexManager Login';
-$lang['title_view_all'] = 'View All Lexicons';
-$lang['headline_view_all'] = 'View All Lexicons';
-$lang['title_view_all_entries'] = 'View All Lexicon Entries';
-$lang['headline_view_all_entries'] = 'View All Lexicon Entries';
-$lang['title_lex_admin'] = 'Lexical Administration';
-$lang['headline_lex_admin'] = 'Lexical Administration';
-$lang['title_lex_newentry'] = 'New Lexicon Entry';
-$lang['headline_lex_newentry'] = 'New Lexicon Entry';
+	public function get_max_ID($lexicon_name)
+	{
+		$row = $this->db 
+			->select_max('Index_ID')
+			->get($lexicon_name)
+			->row();
+		return $row->Index_ID;
+
+	}
 
 
-$lang['first_name'] = 'First Name';
-$lang['last_name'] = 'Last Name';
-$lang['email_address'] = 'Email Address';
-$lang['password'] = 'Password';
-$lang['username'] = 'Username';
-$lang['password'] = 'Password';
-
-
-
-$lang['authentication_error'] = 'Authentication Error';
+}

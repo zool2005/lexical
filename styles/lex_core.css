@@ -246,6 +246,42 @@ a.entrylink:hover, a.entrylink:active, a.searchedentrylink:hover, a.searchedentr
 	color: #06F;
 }
 
+
+/* MESSAGEBOARD STYLING */
+.minfo, .msuccess, .mwarning, .merror, .mvalidation {
+    border: 1px solid;
+    margin: 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
+/*    width: 100%; */
+    padding:12px 10px 12px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    text-align: justify;
+    border-radius: 4px;
+}
+.minfo {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('../images/minfo.png');
+}
+.msuccess {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('../images/msuccess.png');
+}
+.mwarning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('../images/mwarning.png');
+}
+.merror {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('../images/merror.png');
+}
+/* END MESSAGEBOARD STYLING */
+
 .warning {
 	color: red;
 	font-weight: bold;
@@ -402,6 +438,12 @@ input.next {
 fieldset {
 	padding: 10px;
 	border: solid 1px black;
+}
+
+ol.listinput {
+	padding: 0px;
+	margin: 0px;
+	margin-left: -4px;
 }
 
 /* Generic Definitions Styling */

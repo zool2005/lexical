@@ -1,3 +1,4 @@
+<div id="lexindex"><?php echo $lex_ID; ?></div>
 <div id="search">
 	<form id="searchform" action="">
 		<input type="text" size="50" id="searchbox" name="searchbox" />

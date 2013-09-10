@@ -232,14 +232,15 @@ a.entrylink:hover, a.entrylink:active, a.searchedentrylink:hover, a.searchedentr
 
 /* Text/Paragraph Formats */
 
-#entryview p.statictext, fieldset p {
+#entryview p.statictext, fieldset p, li {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-size: large;
 	font-style: italic;
 }
 
 #entryview p a, p.navlink a {
-	color: #06F;
+/*	color: #06F; */
+	color: #3a3a3b;
 }
 
 #entryview a.entrylink {
@@ -282,6 +283,19 @@ a.entrylink:hover, a.entrylink:active, a.searchedentrylink:hover, a.searchedentr
 }
 /* END MESSAGEBOARD STYLING */
 
+.buttonlink {
+	padding: 3px 8px;
+	background-image: url('../images/button_bg.jpg');
+	background-color: #e6e6e6;
+	border: 1px solid #aaaaaa;
+	border-radius: 4px;
+	font-style: italic;
+	text-decoration: none;
+	color: #3a3a3b;
+	font-size: 12px;
+}
+
+
 .warning {
 	color: red;
 	font-weight: bold;
@@ -302,8 +316,17 @@ a.remove_link {
 	color: black;
 }
 
-a.viewlink, a.editlink {
-	color: #06F;
+a.viewlink, a.editlink, a.deletelink {
+/*	color: #06F; */
+	padding: 3px 8px;
+	background-image: url('../images/button_bg.jpg');
+	background-color: #e6e6e6;
+	border: 1px solid #aaaaaa;
+	border-radius: 4px;
+	font-style: italic;
+	text-decoration: none;
+	color: #3a3a3b;
+	font-size: 12px;
 }
 
 legend {
@@ -377,6 +400,20 @@ table.lex_displayoptions, table.lex_displayoptions td {
 
 /* Divs and ID'd Items */
 
+#userlist table {
+	border-collapse: collapse;
+	margin-bottom: 15px;
+}
+
+#userlist th, #userlist td {
+	padding: 4px;
+}
+
+#userlist th {
+	border-bottom: 1px solid black;
+}
+
+
 #query {
 	display: none;
 }
@@ -413,6 +450,10 @@ div.onefield_break_hover {
 	display: none;
 }
 
+
+#fields ul {
+	margin: 5px 0 15px 30px;
+}
 /* Form Elements */
 
 input[type=text], input[type=password], textarea {
@@ -457,7 +498,7 @@ text-decoration: none;
 font-variant: normal;
 }
 
-.Definition{
+ol.Definition{
 font-family: serif;
 font-size: medium;
 color: #000000;
@@ -472,4 +513,28 @@ font-weight: bold;
 font-style: normal;
 text-decoration: none;
 font-variant: normal;
+}
+
+h3 {
+	display: block;
+}
+
+.text {
+	color: #3a3a3b;
+	padding: 5px 0 5px 25px;
+	display: block;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.rich {
+	color: #3a3a3b;
+	padding: 5px 0 5px 25px;
+	display: block;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+ol.list {
+	padding: 0 0 0 40px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-style: italic;
 }

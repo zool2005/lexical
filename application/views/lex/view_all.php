@@ -13,37 +13,44 @@
 | Lexical comes with no warranty for loss of data, as per the GPL3 license.    					|
 +-----------------------------------------------------------------------------------------------+
 */
-echo '<div id="leftbar">';
+?>
 
-	$numTables = count($lexicons);
-
+<div id="leftbar">
+<?php
+	// Retrieve list of available lexicons
+    $numTables = count($lexicons);
     $displayBuf = "";
 
-	if (!$numTables) 
+	// Display list of lexicons with links to their individual administration pages
+	if(!$numTables) 
 	{
-		echo("<p>No lexicons found.</p>\n");
-	}
-	else
+		echo("<p>".$this->lang->line('no_lexicons_found')."</p>\n");
+	} 
+	else 
 	{
+
 		foreach ($lexicons as $lex)
 		{
-	        $displayBuf .= anchor('lexmanager/view_lexicon/'.$lex->Index_ID.'/', $lex->Name, 'class="lexlink"');
+			$lang_ID = $lex->Index_ID;
+			$lang_name = $lex->Name;
+	        $displayBuf .= "<p>".anchor('lexmanager/view_lexicon/'.$lex->Index_ID.'/',$lex->Name, 'class="lexlink"')."</p>\n";
 		}
 		echo($displayBuf);
-	}
+						}
+?>
+</div>
 
-echo '</div>';
-
+<?php 
 echo '<div id="entryview">';
 
 	// If no lexicons have yet been created, display a prompt guiding the administrator to the New Lexicon page
 	if(!$numTables) 
 	{
-		$displayBuf = "<p class=\"warning\">It appears you have no lexicons set up. If you would like to set up a new lexicon, please contact your local administrator.</p>";
+		$displayBuf = '<p class="mwarning">'.$this->lang->line('no_lexicons_error').'</p>';
 	}
 	else
 	{
-		$displayBuf = 'Select a lexicon from the list to view';
+		$displayBuf = $this->lang->line('select_lexicon_from_list');
 	}
 	echo($displayBuf);
 

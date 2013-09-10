@@ -122,8 +122,8 @@ class Lexmanager extends CI_Controller {
 		$displayBuf = "";
 		foreach($field_label_array as $key => $field_label) 
 		{
-
 			$clean_field_label = str_replace(' ', '', $field_label);
+
 			switch($field_type_array[$key]) 
 			{
 				case 'id':
@@ -132,7 +132,8 @@ class Lexmanager extends CI_Controller {
 					break;
 				case 'text':
 					// If a text field, display the contents
-					$displayBuf .= "<br><span class=\"" . $clean_field_label . "\">" . (($lex_styles[$key]['Label'] == '1') ? $field_label . ": " : "") . $lex_data_array[$key] . "</span>\n";
+					$displayBuf .= heading($field_label, 3);
+					$displayBuf .= "<span class=\"text\">" . (($lex_styles[$key]['Label'] == '1') ? $field_label . ": " : "") . $lex_data_array[$key] . "</span>\n";
 					break;
 				case 'rich':
 					// If a rich text field, create a new paragraph and display the formatted contents
@@ -168,8 +169,8 @@ class Lexmanager extends CI_Controller {
 						}
 					}
 					$field_value = str_replace("]]", "</a>", $field_value);
-					
-					$displayBuf .= "<p class=\"" . $clean_field_label . "\">" . (($lex_styles[$key]['Label'] == '1') ? $field_label . ": " : "") . $field_value . "</p>\n";
+					$displayBuf .= heading($field_label, 3);
+					$displayBuf .= "<p class=\"rich\">" . (($lex_styles[$key]['Label'] == '1') ? $field_label . ": " : "") . $field_value . "</p>\n";
 					break;
 				case 'list':
 					// If a list text field, format the contents and generate an HTML list
@@ -195,7 +196,8 @@ class Lexmanager extends CI_Controller {
 					
 					// If a list field, generate an HTML list
 					$field_value_array = explode("\n", $field_value);
-					$displayBuf .= "<ol class=\"" . $clean_field_label . "\">";
+					$displayBuf .= heading($field_label, 3);
+					$displayBuf .= "<ol class=\"list\">";
 					foreach($field_value_array as $def) {
 						$displayBuf .= "<li>" . $def . "</li>";
 					}
@@ -236,7 +238,7 @@ class Lexmanager extends CI_Controller {
 			}
 		}
 		$displayBuf .= "</style>\n";
-		echo($displayBuf);
+	//	echo($displayBuf);
 		
 		// Add necessary JavaScript events to any links
 		echo("<script type=\"text/javascript\">wordLookup();</script>\n");

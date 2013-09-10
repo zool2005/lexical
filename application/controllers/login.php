@@ -55,7 +55,7 @@ class Login extends CI_Controller {
 
 		$data['page_title'] = $this->lang->line('title_login');
 		$data['headline'] = $this->lang->line('headline_login');
-		$data['topbar'] = 'empty_topbar';
+		$data['topbar'] = 'basic_topbar';
 		$data['content'] = 'users/login';
 		$this->load->view('template', $data);
 	}

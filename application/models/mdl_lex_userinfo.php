@@ -28,24 +28,29 @@ class Mdl_lex_userinfo extends MY_Model {
     public function validation_rules()
     {
         return array(
+            'status'          => array(
+                'field' => 'status',
+                'label' => $this->lang->line('val_status'),
+                'rules' => 'trim|required|numeric'
+            ),
             'first_name'      => array(
                 'field' => 'first_name',
-                'label' => $this->lang->line('first_name'),
+                'label' => $this->lang->line('val_first_name'),
                 'rules' => 'trim|required|strip_tags|min_length[3]|max_length[15]'
             ),
             'last_name'      => array(
                 'field' => 'last_name',
-                'label' => $this->lang->line('last_name'),
+                'label' => $this->lang->line('val_last_name'),
                 'rules' => 'trim|required|strip_tags|strtoupper|min_length[3]|max_length[20]'
             ),
-            'email'      => array(
-                'field' => 'email',
-                'label' => $this->lang->line('email'),
+            'email_address'      => array(
+                'field' => 'email_address',
+                'label' => $this->lang->line('val_email'),
                 'rules' => 'trim|required|valid_email'
             ),
             'password'      => array(
                 'field' => 'password',
-                'label' => $this->lang->line('password'),
+                'label' => $this->lang->line('val_password'),
                 'rules' => 'trim|required|strip_tags|min_length[7]|matches[passconf]|sha1'
             )
 
@@ -89,6 +94,14 @@ class Mdl_lex_userinfo extends MY_Model {
                 'logged_in' => TRUE
             ));
     }
+
+
+    function filter_user_select()
+    {
+        $this->db->select('uid, first_name, last_name, email_address, status');
+        return $this;
+    }
+
 
 /*
     function user_list() 

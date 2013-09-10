@@ -18,7 +18,7 @@
 </div>
 
 <div id="entryview">
-	<p class="statictext">Enter a search term in the box above, or select a letter to browse.</p>
+	<p class="statictext"><?php echo $this->lang->line('lexicon_select_or_search_message'); ?></p>
 </div>
 
 

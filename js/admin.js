@@ -128,6 +128,7 @@ function makeNextButtons() {
 
 // On adm_lex_newentry.php, add controls for 'list'-type fields to add new list elements
 function attachListControlsForNewEntry() {
+	// CI checked and working
 	$('input.addListInput')
 		.bind('click', function() {
 			var newField = "<li><input type=\"text\" size=\"50\"></li>";
@@ -139,6 +140,7 @@ function attachListControlsForNewEntry() {
 
 // On adm_lex_newentry.php, assemble all list items into single fields on submit
 function attachSubmitControlsForNewEntry() {
+	// CI checked and working
 	$('#addentry')
 		.submit(function() {
 			$('ol.listinput')

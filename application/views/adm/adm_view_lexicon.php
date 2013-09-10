@@ -1,27 +1,6 @@
-	        	<div id="leftbar">
-					<?php
-						// Retrieve list of available lexicons
-                        $numTables = count($lexicons);
-                        $displayBuf = "";
-
-						// Display list of lexicons with links to their individual administration pages
-						if(!$numTables) {
-							echo("<p>No lexicons found.</p>\n");
-						} else {
-
-							foreach ($lexicons as $lex)
-							{
-								$lang_ID = $lex->Index_ID;
-								$lang_name = $lex->Name;
-	                         //   $displayBuf .= "<p><a href=\"adm_viewlex.php?i=" . $langID . "\" class=\"lexlink\">" . $langName . "</a></p>\n";
-	                            $displayBuf .= "<p>".anchor('lex_admin/adm_view_lexicon/'.$lang_ID.'/',$lang_name, 'class="lexlink"')."</p>\n";
-							}
-
-							echo($displayBuf);
-						}
-
-                    ?>
-	            </div>
+<div id="leftbar">
+    <?php $this->load->view('adm/adm_lex_list_partial'); ?>
+</div>
 	            <div id="entryview">
                     <?php
 						// Retrieve basic lexicon stats
@@ -30,10 +9,10 @@
 					?>
                     <table>
                     	<tr>
-                        	<th colspan="2">Lexicon Information</th>
+                        	<th colspan="2"><?php echo $this->lang->line('lexicon_information'); ?></th>
                         </tr>
                         <tr>
-                        	<th>Name</th>
+                        	<th><?php echo $this->lang->line('lexicon_name'); ?></th>
                             <td>
 								<?php
 									// Show the name of the current lexicon
@@ -42,7 +21,7 @@
 							</td>
                         </tr>
                         <tr>
-                        	<th>Total Entries</th>
+                        	<th><?php echo $this->lang->line('total_entries'); ?></th>
                             <td>
                             	<?php
 									// Show the number of entries in the current lexicon
@@ -51,7 +30,7 @@
                             </td>
                         </tr>
                         <tr>
-                        	<th>Date Created</th>
+                        	<th><?php echo $this->lang->line('date_created'); ?></th>
                             <td>
                             	<?php
 									// Show the timestamp of the lexicon's creation
@@ -60,7 +39,7 @@
                             </td>
                         </tr>
                         <tr>
-                        	<th>Date Last Edited</th>
+                        	<th><?php echo $this->lang->line('date_last_edited'); ?></th>
                             <td>
                             	<?php
 									// Show the timestamp of the last time the lexicon was edited
@@ -69,7 +48,7 @@
                             </td>
                         </tr>
                     </table>
-                    <p><?php echo anchor('lexmanager/view_lexicon/'.$current_lexicon->Index_ID.'/','View Lexicon'); ?></p>
+                    <p><?php echo anchor('lexmanager/view_lexicon/'.$current_lexicon->Index_ID.'/',$this->lang->line('view_lexicon'), 'class="buttonlink"'); ?></p>
 
                     <noscript>
                     	<p class="statictext warning">This page requires that JavaScript be enabled.</p>

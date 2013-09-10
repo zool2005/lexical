@@ -14,22 +14,22 @@
 +-----------------------------------------------------------------------------------------------+
 */
 
-$this->load->view('headset');
-
-/*
-	if($this->session->flashdata('mtype') && $this->session->flashdata('message'))
-	{
-		echo = "<p class='{$this->session->flashdata('mtype')}'>{$this->session->flashdata('message')}</p>"; 
-	}
-*/
-?>
+$this->load->view('headset'); ?>
 
 
 <div id="content">
 
    	<div id="topbar">
-   		<?php echo heading($headline, 1).' '.anchor('login/logout', 'Logout'); ?>
-		<?php $this->load->view($topbar); ?>
+<?php 
+		echo heading($headline, 1);
+
+   		if ($this->uri->segment(2) == 'view_lexicon')
+   		{
+			echo anchor('lexmanager/view_all', $this->lang->line('list_of_lexicons'));
+   		}
+
+		$this->load->view($topbar); 
+?>
     </div>
 
 

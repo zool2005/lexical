@@ -3,7 +3,6 @@
 
 <div id="entryview">
 
-<p>To continue, you need to sign in</p>
 
 <?php 
 	echo form_fieldset($this->lang->line('login'));

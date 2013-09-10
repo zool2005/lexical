@@ -29,7 +29,8 @@ function adjustSearch() {
 		.submit(function() {
 			var query = $('#searchbox').attr('value');
 			var lexindex = $('#lexindex').html();
-			$('#leftbar').load('query.php?i=' + lexindex + '&q=' + query);
+			$('#leftbar').load(base_url+ 'index.php/ajax/query/'+lexindex+'/'+query+'/word');
+//			$('#leftbar').load('query.php?i=' + lexindex + '&q=' + query);
 			return false;
 		});
 }

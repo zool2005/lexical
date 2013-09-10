@@ -1,24 +1,5 @@
 <div id="leftbar">
-<?php
-	// Retrieve list of available lexicons
-    $numTables = count($lexicons);
-    $displayBuf = "";
-
-	// Display list of lexicons with links to their individual administration pages
-	if(!$numTables) 
-	{
-		echo("<p>No lexicons found.</p>\n");
-	}
-	else
-	{
-		foreach ($lexicons as $lex)
-		{
-	        $displayBuf .= "<p>".anchor('lex_admin/adm_view_lexicon/'.$lex->Index_ID.'/',$lex->Name, 'class="lexlink"')."</p>\n";
-		}
-
-		echo($displayBuf);
-	}
-?>
+	<?php $this->load->view('adm/adm_lex_list_partial'); ?>
 </div>
 
 <div id="entryview">
@@ -40,6 +21,7 @@ echo '<table class="lex_newentry">';
 	// Iterate over the table structure and generate an empty form to input the new data
 	foreach($field_label_array as $key => $field_label) 
     {
+
 		$clean_field_label = str_replace(' ', '', $field_label);
 
 		echo form_label($field_label, $clean_field_label);
@@ -85,7 +67,7 @@ echo '<table class="lex_newentry">';
 
 	}
 
-	echo form_submit('submit', 'Submit');
+	echo form_label('&nbsp;'); echo form_submit('submit', $this->lang->line('btn_submit'));
 
 	echo form_close();
 

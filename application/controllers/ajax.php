@@ -22,6 +22,11 @@ class Ajax extends CI_Controller {
 	public function __construct()
 	{
         parent::__construct();
+
+        if (!$this->session->userdata('logged_in'))
+        {
+        	redirect('login/logout', 'refresh');
+        }
 	}
 
 
@@ -298,6 +303,57 @@ class Ajax extends CI_Controller {
 			}
 		}
 		return 0;
+	}
+
+
+
+
+
+	public function add_lexicon_comment()
+	{
+		$lex_ID = check_int($this->input->post('lex_ID'));
+		$entry_index = check_int($this->input->post('entry_index'));
+		$feedback_content = clean_string($this->input->post('feedback_content'));
+
+
+		if ($lex_ID > 0 && $entry_index > 0 && $feedback_content != '')
+		{
+			$this->load->model('mdl_lexicon_comments');
+
+			$data = array(
+				'lexicon_ID' => $lex_ID,
+				'entry_index_ID' => $entry_index,
+				'user_id' => $this->session->userdata('user_id'),
+				'comment' => clean_string($this->input->post('feedback_content')),
+				'DateCreated' => date('Y-m-d H:i:s')
+				);
+			$this->mdl_lexicon_comments->save(NULL, $data);
+
+		}
+		else
+		{
+			return FALSE;
+		}
+
+
+	}
+
+	public function retrieve_lexicon_comments($lex_ID, $entry_index)
+	{
+		$this->load->model('mdl_lexicon_comments');
+		$comments = $this->mdl_lexicon_comments->retrieve_lexicon_comments($lex_ID, $entry_index);
+		echo $comments;
+	}
+
+
+	public function delete_lexicon_comment($id)	// lexicon_comments.Index_ID
+	{
+		if ($this->session->userdata('status') == 1)
+        {
+			$this->load->model('mdl_lexicon_comments');
+			$this->mdl_lexicon_comments->delete($id);
+        }
+
 	}
 
 }

@@ -78,3 +78,56 @@ function wordLookup() {
 			return false;
 		});
 }
+
+
+function addComment() {
+
+	uc = $('#user_feedback_div');
+	var lex_ID = uc.data('lex_id');
+	var entry_index = uc.data('entry_index');	
+
+// Perform action on submit button click
+	$('#user_feedback_submit').on('click', function() {
+
+
+		feedback_content = $('#user_feedback_textarea').val();
+
+		// If the lexicon_ID and entry_index_ID values have been supplied, add them to db_array for insert
+		if (lex_ID && entry_index) {
+
+			data_array = {
+				'lex_ID': lex_ID,
+				'entry_index': entry_index,
+				'feedback_content': feedback_content 
+			};
+			// Run insert command via AJAX
+			$.ajax({
+				data: data_array,
+				type: "POST",
+				url: base_url + 'index.php/ajax/add_lexicon_comment',
+				async: false,
+				// If insert successful, update the lexicon comments on-the-fly without page refresh
+				success: function() {
+					$('#user_feedback_textarea').val('');
+					var datasource = base_url + 'index.php/ajax/retrieve_lexicon_comments/'+lex_ID+'/'+entry_index;
+					$('#user_feedback_div').load(datasource);
+				}
+
+			}); // end ajax
+		}
+
+	});
+
+
+	$('.user_feedback_delete').on('click', function() {
+		comment_id = $(this).data('comment_id');
+		$.ajax({
+			url: base_url + 'index.php/ajax/delete_lexicon_comment/'+comment_id,
+			success: function() {
+					var datasource = base_url + 'index.php/ajax/retrieve_lexicon_comments/'+lex_ID+'/'+entry_index;
+					data = $('#comment_'+comment_id).fadeOut();
+				}
+		});
+	});
+
+} // end addComment function

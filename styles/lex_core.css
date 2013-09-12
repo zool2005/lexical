@@ -528,13 +528,36 @@ h3 {
 
 .rich {
 	color: #3a3a3b;
-	padding: 5px 0 5px 25px;
+	padding: 8px 0 8px 25px;
 	display: block;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 ol.list {
-	padding: 0 0 0 40px;
+	padding: 8px 0 8px 40px;
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	font-style: italic;
+}
+
+
+#user_feedback_textarea {
+	border: 1px solid #ccc;
+}
+
+
+div.lexicon_comments {
+	margin: 5px 5px 5px 25px;
+	padding: 5px 0px;
+	border-bottom: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 11px;
+	width: 500px;
+	text-align: justify;
+}
+
+a.aboutlink {
+	text-decoration: none;
+	font-size: 11px;
+	color: #3a3a3b;
+	text-align: center;
 }

@@ -27,6 +27,8 @@
 	
 	<?php echo form_fieldset_close(); ?>
 
+	<p style="text-align: center";><?php echo anchor_popup('login/about', 'About Lexical', array('height' => 300, 'width' => 600, 'class' => 'aboutlink')); ?></p>
+
 </div>
 
 	<script type="text/javascript">

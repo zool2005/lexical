@@ -7,7 +7,7 @@
 | Original Website : http://www.veche.net/programming/lexmanager.html 							|
 | Original Source Code on GitHub : https://github.com/voikya/LexManager                         |
 |                                                                                               |
-| Lexical is free and open-source. You may redistribute and/or modify Lexical under the terms | 
+| Lexical is free and open-source. You may redistribute and/or modify Lexical under the terms   | 
 | of the GNU General Public  License (GPL) as published by the Free Software Foundation, 		|
 | either version 3 of the license or any later version. 										|
 |                                                                                               |
@@ -239,9 +239,24 @@ class Lexmanager extends CI_Controller {
 		}
 		$displayBuf .= "</style>\n";
 	//	echo($displayBuf);
+
+		echo heading('User Feedback', 3);
+		
+		echo '<div id="user_feedback_div" data-lex_ID ="'.$lex_ID.'" data-entry_index="'.$entry_index.'">';
+			$this->load->model('mdl_lexicon_comments');
+			echo $this->mdl_lexicon_comments->retrieve_lexicon_comments($lex_ID, $entry_index);
+		echo '</div>';
+
+		echo '<br />';	
+
+		$textarea = array('name' => 'user_feedback_textarea', 'id' => 'user_feedback_textarea', 'rows' => '5', 'cols' => '80');
+		echo form_textarea($textarea);
+
+		$submit = array('name' => 'submit', 'value' => 'Reply', 'id' => 'user_feedback_submit');
+		echo form_submit($submit);
 		
 		// Add necessary JavaScript events to any links
-		echo("<script type=\"text/javascript\">wordLookup();</script>\n");
+		echo("<script type=\"text/javascript\">wordLookup(); addComment();</script>\n");
 
 	}
 

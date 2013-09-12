@@ -15,7 +15,6 @@
 |
 */
 $config['base_url']	= 'http://localhost/~zool/lexical';
-// $config['base_url']	= 'http://www.sparksource.fr/lexical';
 /*
 |--------------------------------------------------------------------------
 | Index File

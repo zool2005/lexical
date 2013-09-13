@@ -44,6 +44,7 @@ class Mdl_lexicon_comments extends MY_Model {
                 $display_buf .= '<p style="font-style: italic; padding: 2px;">Comment left by  <b>'.$row['first_name'].'</b> on '.date('D jS M y \a\t H:i', strtotime($row['DateCreated'])).'&nbsp;&nbsp;&nbsp;'.img($image_properties).'</p>';
                 $display_buf .= '<p style="margin-left: 20px; padding: 2px">'.$row['comment'].'</p>';
                 $display_buf .= '</div>';
+                $display_buf .= "<script type=\"text/javascript\">addComment();</script>\n";
             }
             return $display_buf;
         }

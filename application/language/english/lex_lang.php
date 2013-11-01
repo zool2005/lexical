@@ -15,8 +15,8 @@
 */
 
 // PAGE TITLES & HEADLINES
-$lang['title_login'] = 'LexManager Login';
-$lang['headline_login'] = 'LexManager Login';
+$lang['title_login'] = 'Lexical Login';
+$lang['headline_login'] = 'Lexical Login';
 $lang['title_view_all'] = 'View All Lexicons';
 $lang['headline_view_all'] = 'View All Lexicons';
 $lang['title_view_all_entries'] = 'View All Lexicon Entries';

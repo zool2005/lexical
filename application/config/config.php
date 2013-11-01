@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/~zool/lexical';
+$config['base_url']	= '';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -223,7 +223,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'MO5y4H508j7R9DV5140Mj7R9DV5140My4H508j7R';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
